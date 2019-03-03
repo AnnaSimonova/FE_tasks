@@ -1,15 +1,15 @@
 @charset "UTF-8";
 @font-face {
   font-family: Proxima Nova Reg;
-  src: url("./fonts/Proxima Nova/ProximaNova-Reg.otf");
+  src: url("../fonts/Proxima Nova/ProximaNova-Reg.otf");
 }
 @font-face {
   font-family: Proxima Nova SBold;
-  src: url("./fonts/Proxima Nova/ProximaNova Semibold.otf");
+  src: url("../fonts/Proxima Nova/ProximaNova Semibold.otf");
 }
 @font-face {
   font-family: Proxima Nova XBold;
-  src: url("./fonts/Proxima Nova/Proxima-Nova-Xbold.otf");
+  src: url("../fonts/Proxima Nova/Proxima-Nova-Xbold.otf");
 }
 html, body {
   width: 100%;
@@ -59,7 +59,7 @@ header {
   padding-left: 20px;
 }
 .header_elem:nth-child(2)::after {
-  background-image: url("./images/arrow-down.svg");
+  background-image: url("../images/arrow-down.svg");
   background-size: 10px 20px;
   display: inline-block;
   width: 10px;

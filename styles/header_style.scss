@@ -1,16 +1,16 @@
 @font-face {
   font-family: Proxima Nova Reg;
-  src: url('./fonts/Proxima Nova/ProximaNova-Reg.otf');
+  src: url('../fonts/Proxima Nova/ProximaNova-Reg.otf');
 }
 
 @font-face {
   font-family: Proxima Nova SBold;
-  src: url('./fonts/Proxima Nova/ProximaNova Semibold.otf');
+  src: url('../fonts/Proxima Nova/ProximaNova Semibold.otf');
 }
 
 @font-face {
   font-family: Proxima Nova XBold;
-  src: url('./fonts/Proxima Nova/Proxima-Nova-Xbold.otf');
+  src: url('../fonts/Proxima Nova/Proxima-Nova-Xbold.otf');
 }
 
 $big-tablet: 960px;
@@ -114,7 +114,7 @@ header {
     padding-left: 20px;
 
     &::after {
-      background-image: url("./images/arrow-down.svg");
+      background-image: url("../images/arrow-down.svg");
       background-size: 10px 20px;
       display: inline-block;
       width: 10px;

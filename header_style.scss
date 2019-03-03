@@ -1,0 +1,267 @@
+@font-face {
+  font-family: Proxima Nova Reg;
+  src: url('./fonts/Proxima Nova/ProximaNova-Reg.otf');
+}
+
+@font-face {
+  font-family: Proxima Nova SBold;
+  src: url('./fonts/Proxima Nova/ProximaNova Semibold.otf');
+}
+
+@font-face {
+  font-family: Proxima Nova XBold;
+  src: url('./fonts/Proxima Nova/Proxima-Nova-Xbold.otf');
+}
+
+$big-tablet: 960px;
+$tablet: 700px;
+$mobile: 600px;
+$small-mobile: 300px;
+
+$colors: (
+        line-dark: #EBECF0,
+        line-light: #F7F7F9,
+        font-dark: #2B292D,
+        font-light: #5B5664,
+        act-elem-dark: #EEB20B,
+        act-elem-light: #FFC380,
+        babies-dark: #D44141,
+        babies-light: #F94F4C,
+        teens-dark: #00929A,
+        teens-light: #00B9C4
+);
+
+$font-sizes: (
+        basic-size: 14px,
+        header-size: 18px
+);
+
+@function color($color-name) {
+  @return map_get($colors, $color-name);
+}
+
+@function font($font-name) {
+  @return map_get($font-sizes, $font-name);
+}
+
+@mixin big-tablet {
+  @media (max-width: #{$big-tablet}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$mobile}) {
+    @content;
+  }
+}
+
+@mixin small-mobile {
+  @media (max-width: #{$small-mobile}) {
+    @content;
+  }
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-size: font(basic-size);
+  color: color(font-dark);
+  font-family: 'Proxima Nova Reg';
+}
+
+header {
+  display: grid;
+  grid-template-columns: 140px auto 110px 110px 110px 90px;
+  border: solid thin color(line-dark);
+  font-family: 'Proxima Nova SBold';
+
+  @include tablet {
+    grid-template-columns: 140px auto 110px 80px 90px 80px;
+  }
+
+  @include mobile {
+    grid-template-columns: 40% 40% 20%;
+  }
+
+  @include small-mobile {
+    grid-template-columns: 65% 35%;
+  }
+}
+
+.header_elem {
+  text-align: center;
+  padding: 20px 0 10px;
+
+  &:first-child {
+    font-size: font(header-size);
+    letter-spacing: 7px;
+    border-right: solid thin color(line-dark);
+  }
+
+  &:nth-child(2) {
+    text-align: left;
+    padding-left: 20px;
+
+    &::after {
+      background-image: url("./images/arrow-down.svg");
+      background-size: 10px 20px;
+      display: inline-block;
+      width: 10px;
+      height: 13px;
+      content:"";
+    }
+
+    @include small-mobile {
+      display: none;
+    }
+  }
+
+  &:nth-child(3), &:nth-child(4), &:nth-child(5) {
+    letter-spacing: 1px;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &:last-child {
+    border-left: solid thin color(line-dark);
+    padding-top: 15px;
+
+    img {
+      margin-right: 5px;
+    }
+  }
+}
+
+.menu_item:hover {
+  cursor: pointer;
+  position: relative;
+
+  &::after {
+    display: block;
+    content: '';
+    width: 50%;
+    height: 2px;
+    background-color: color(act-elem-dark);
+    position: absolute;
+    bottom: 20%;
+    left: 25%;
+  }
+}
+
+.active-elem {
+  color: color(act-elem-light);
+}
+
+//Side menu
+main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+#nav_babies, #nav_teens {
+  height: 100%;
+  background-color: color(babies-light);
+  position: relative;
+}
+
+#nav_teens {
+  background-color: color(teens-light);
+  position: relative;
+
+  .nav_title {
+    p {
+      width: 130px;
+      height: 100px;
+      top: 47%;
+    }
+  }
+}
+
+.nav_title {
+  width: 100%;
+  height: 100%;
+  color: white;
+  position: relative;
+
+  p {
+    width: 100px;
+    height: 70px;
+    transform: rotate(-90deg);
+    position: absolute;
+    top: 50%;
+  }
+}
+
+.burger_menu {
+  position: relative;
+  top: 20px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  z-index: 1;
+
+  span {
+    background-color: white;
+    height: 2px;
+    width: 20px;
+    position: absolute;
+    left: 15px;
+
+    &:nth-child(even) {
+      width: 15px;
+    }
+  }
+
+  $top-param: 1px;
+  @for $i from 1 through 4 {
+    $top-param: $top-param + 5;
+    .span-#{$i} {
+      top: $top-param;
+    }
+  }
+}
+
+.menu_list {
+  width: 400px;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 1px;
+
+  ul {
+    list-style-type: none;
+    margin-left: 25%;
+    margin-top: 30%;
+  }
+
+  ul li::before {
+    content: "\203E\2002";
+  }
+}
+
+.close_btn {
+  margin-top: 20px;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+
+
+

@@ -18,8 +18,8 @@ function toggleMenuItems() {
     });
 }
 
-function toggleSideMenu(blockName) {
-    let targetBlock = document.getElementById(blockName);
+function toggleSideMenu(targetBlockName, secondBlockName) {
+    let targetBlock = document.getElementById(targetBlockName);
     let burgerMenu = targetBlock.querySelector(".burger_menu");
     let closeBtn = targetBlock.querySelector(".close_btn");
     let menuList = targetBlock.querySelector(".menu_list");
@@ -27,4 +27,16 @@ function toggleSideMenu(blockName) {
     burgerMenu.classList.toggle("hidden");
     closeBtn.classList.toggle("hidden");
     menuList.classList.toggle("hidden");
+
+    let secondBlock = document.getElementById(secondBlockName);
+    let secBurgerMenu = secondBlock.querySelector(".burger_menu");
+    if (secBurgerMenu.classList.contains("hidden")) {
+        let secCloseBtn = secondBlock.querySelector(".close_btn");
+        let secMenuList = secondBlock.querySelector(".menu_list");
+
+        secBurgerMenu.classList.toggle("hidden");
+        secCloseBtn.classList.toggle("hidden");
+        secMenuList.classList.toggle("hidden");
+    }
+
 }

@@ -9,8 +9,8 @@
 }
 
 @font-face {
-  font-family: Proxima Nova XBold;
-  src: url('../fonts/Proxima Nova/Proxima-Nova-Xbold.otf');
+  font-family: Proxima Nova Light;
+  src: url('../fonts/Proxima Nova/ProximaNova-Light.otf');
 }
 
 $big-tablet: 960px;
@@ -181,6 +181,7 @@ main {
   background-color: color(babies-light);
   display: flex;
   color: white;
+  font-family: "Proxima Nova Light";
 }
 
 #nav_teens {
@@ -201,31 +202,39 @@ main {
 
   p {
     position: relative;
-    top: 50%;
+    top: 40%;
     writing-mode: vertical-lr;
     transform: rotate(180deg);
+    letter-spacing: 1px;
   }
 }
 
 .menu_list {
   width: 365px;
   font-size: 18px;
-  line-height: 2;
+  line-height: 2.2;
   letter-spacing: 1px;
 
   ul {
     list-style-type: none;
     margin-left: 10%;
     margin-top: 60%;
+    position: relative;
   }
 
   ul li::before {
-    content: "\203E\2002";
+    content: "";
+    background-color: white;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    height: 2px;
+    width: 25px;
   }
 }
 
 .menu_sign {
-  margin-top: 30px;
+  margin-top: 25px;
   cursor: pointer;
 }
 
@@ -258,7 +267,9 @@ main {
 .close_btn {
   width: 50px;
   height: 50px;
-  margin-left: 30px;
+  margin-left: 40px;
+  font-size: 17px;
+  font-weight: 900;
 }
 
 

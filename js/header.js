@@ -24,14 +24,7 @@ function toggleSideMenu(blockName) {
     let closeBtn = targetBlock.querySelector(".close_btn");
     let menuList = targetBlock.querySelector(".menu_list");
 
-    burgerMenu.addEventListener('click', function() {
-        burgerMenu.classList.add("hidden");
-        closeBtn.classList.remove("hidden");
-        menuList.classList.remove("hidden");
-    });
-    closeBtn.addEventListener('click', function() {
-        burgerMenu.classList.remove("hidden");
-        closeBtn.classList.add("hidden");
-        menuList.classList.add("hidden");
-    });
+    burgerMenu.classList.toggle("hidden");
+    closeBtn.classList.toggle("hidden");
+    menuList.classList.toggle("hidden");
 }

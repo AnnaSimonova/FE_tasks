@@ -112,43 +112,62 @@ main {
   display: flex;
 }
 
+.hidden {
+  display: none;
+}
+
 #nav_babies, #nav_teens {
   height: 100%;
   background-color: #F94F4C;
-  position: relative;
+  display: flex;
+  color: white;
 }
 
 #nav_teens {
   background-color: #00B9C4;
-  position: relative;
-}
-#nav_teens .nav_title p {
-  width: 130px;
-  height: 100px;
-  top: 47%;
 }
 
-.nav_title {
-  width: 100%;
-  height: 100%;
-  color: white;
-  position: relative;
+.nav_closed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50px;
 }
-.nav_title p {
-  width: 100px;
-  height: 70px;
-  transform: rotate(-90deg);
-  position: absolute;
+
+.menu_title {
+  height: 90%;
+}
+.menu_title p {
+  position: relative;
   top: 50%;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+}
+
+.menu_list {
+  width: 365px;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 1px;
+}
+.menu_list ul {
+  list-style-type: none;
+  margin-left: 10%;
+  margin-top: 60%;
+}
+.menu_list ul li::before {
+  content: "‾ ";
+}
+
+.menu_sign {
+  margin-top: 30px;
+  cursor: pointer;
 }
 
 .burger_menu {
   position: relative;
-  top: 20px;
   width: 50px;
   height: 50px;
-  cursor: pointer;
-  z-index: 1;
 }
 .burger_menu span {
   background-color: white;
@@ -173,29 +192,10 @@ main {
   top: 21px;
 }
 
-.menu_list {
-  width: 400px;
-  font-size: 18px;
-  line-height: 2;
-  letter-spacing: 1px;
-}
-.menu_list ul {
-  list-style-type: none;
-  margin-left: 25%;
-  margin-top: 30%;
-}
-.menu_list ul li::before {
-  content: "‾ ";
-}
-
 .close_btn {
-  margin-top: 20px;
-  margin-left: 15px;
-  cursor: pointer;
-}
-
-.hidden {
-  display: none;
+  width: 50px;
+  height: 50px;
+  margin-left: 30px;
 }
 
 /*# sourceMappingURL=header_style.css.map */

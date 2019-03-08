@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Task 1</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+<header>
+    <a href="#">BOKM&Aring;L</a>
+    <a href="#">Для усіх&ensp;</a>
+    <ul>
+        <li><a href="#">Про Букмоль</a></li>
+        <li><a href="#">Співпраця</a></li>
+        <li><a href="#">Підтримка</a></li>
+    </ul>
+    <div>
+        <a href="#"><img src="./images/search.png" alt="search icon"></a>
+        <a href="#"><img src="./images/save.png" alt="save icon"></a>
+    </div>
+</header>
+<main>
+    <div id="menu_babies">
+        <div class="menu_closed">
+            <div class="burger_menu" onclick="toggleSideMenu('menu_babies', 'menu_teens')">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu_title"><p>ДЛЯ МАЛЮКІВ</p></div>
+        </div>
+        <div class="menu_list hidden">
+            <ul>
+                <li>Головна</li>
+                <li>ТОП</li>
+                <li>Огляди</li>
+                <li>Корисні статті</li>
+                <li>Новини</li>
+                <li>Авторська колонка</li>
+                <li>Інтерактив</li>
+                <li>Літклуб</li>
+            </ul>
+        </div>
+    </div>
+    <div id="menu_teens">
+        <div class="menu_closed">
+            <div class="burger_menu" onclick="toggleSideMenu('menu_teens', 'menu_babies')">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu_title"><p>ДЛЯ ТІНЕЙДЖЕРІВ</p></div>
+        </div>
+        <div class="menu_list hidden">
+            <nav>
+                <ul>
+                    <li>Головна</li>
+                    <li>ТОП</li>
+                    <li>Огляди</li>
+                    <li>Корисні статті</li>
+                    <li>Новини</li>
+                    <li>Авторська колонка</li>
+                    <li>Інтерактив</li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</main>
+<script src="js/action.js"></script>
+</body>
+</html>

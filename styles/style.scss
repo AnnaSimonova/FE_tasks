@@ -15,7 +15,7 @@
 
 $big-tablet: 960px;
 $tablet: 700px;
-$mobile: 600px;
+$mobile: 620px;
 $small-mobile: 300px;
 
 $colors: (
@@ -74,32 +74,23 @@ html, body {
 }
 
 body {
-  margin: 0;
   font-size: font(basic-size);
   color: color(font-dark);
   font-family: 'Proxima Nova Reg';
+  margin: 0;
 }
 
 header {
-  display: grid;
-  grid-template-columns: 140px auto 110px 110px 110px 90px;
+  display: flex;
   border: solid thin color(line-dark);
   font-family: 'Proxima Nova SBold';
 
-  @include tablet {
-    grid-template-columns: 140px auto 110px 80px 90px 80px;
-  }
-
-  @include mobile {
-    grid-template-columns: 40% 40% 20%;
-  }
-
-  @include small-mobile {
-    grid-template-columns: 65% 35%;
+  a {
+    color: color(font-dark);
   }
 }
 
-.header_elem {
+header > * {
   text-align: center;
   padding: 20px 0 10px;
 
@@ -107,11 +98,17 @@ header {
     font-size: font(header-size);
     letter-spacing: 7px;
     border-right: solid thin color(line-dark);
+    min-width: 140px;
   }
 
   &:nth-child(2) {
     text-align: left;
     padding-left: 20px;
+    width: 55%;
+
+    @include mobile {
+      min-width: 30%;
+    }
 
     &::after {
       background-image: url("../images/arrow-down.svg");
@@ -127,17 +124,10 @@ header {
     }
   }
 
-  &:nth-child(3), &:nth-child(4), &:nth-child(5) {
-    letter-spacing: 1px;
-
-    @include mobile {
-      display: none;
-    }
-  }
-
   &:last-child {
     border-left: solid thin color(line-dark);
     padding-top: 15px;
+    min-width: 90px;
 
     img {
       margin-right: 5px;
@@ -145,7 +135,37 @@ header {
   }
 }
 
-.menu_item:hover {
+header ul {
+  width: 400px;
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  justify-content: flex-end;
+
+  li {
+    letter-spacing: 1px;
+    margin-right: 25px;
+
+    @include tablet {
+      margin-right: 10px;
+    }
+
+    @include mobile {
+      display: none;
+    }
+
+    &:first-child {
+      min-width: 100px;
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+  text-underline: none;
+}
+
+header ul li:hover {
   cursor: pointer;
   position: relative;
 
@@ -176,20 +196,24 @@ main {
   display: none;
 }
 
-#nav_babies, #nav_teens {
+#menu_babies, #menu_teens {
   height: 100%;
   background-color: color(babies-light);
   display: flex;
   color: white;
   font-family: "Proxima Nova Light";
+
+  a {
+    color: white;
+  }
 }
 
-#nav_teens {
+#menu_teens {
   background-color: color(teens-light);
 }
 
 
-.nav_closed {
+.menu_closed {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -233,43 +257,47 @@ main {
   }
 }
 
-.menu_sign {
+.burger_menu {
   margin-top: 25px;
   cursor: pointer;
+
+  &.active-elem {
+    span {
+      &:nth-child(1) {
+        transform: rotate(45deg) translate(3px, 3px);
+        width: 22px;
+      }
+
+      &:nth-child(even) {
+        display: none;
+      }
+
+      &:nth-child(3) {
+        transform: rotate(-45deg) translate(0, -1px);
+        width: 22px;
+      }
+    }
+  }
 }
 
-.burger_menu {
-  position: relative;
-  width: 50px;
-  height: 50px;
+.burger_menu span {
+  display: block;
+  height: 2px;
+  background-color: white;
+  transition: transform 0.3s cubic-bezier(.54,.1,.42,1.48), width 0.3s ease-out;
 
-  span {
-    background-color: white;
-    height: 2px;
+  &:not(:last-child) {
+    margin-bottom: 3px;
+  }
+
+  &:nth-child(even) {
+    transform-origin: 0 50%;
+    width: 15px;
+  }
+
+  &:nth-child(odd) {
     width: 20px;
-    position: absolute;
-    left: 15px;
-
-    &:nth-child(even) {
-      width: 15px;
-    }
   }
-
-  $top-param: 1px;
-  @for $i from 1 through 4 {
-    $top-param: $top-param + 5;
-    .span-#{$i} {
-      top: $top-param;
-    }
-  }
-}
-
-.close_btn {
-  width: 50px;
-  height: 50px;
-  margin-left: 40px;
-  font-size: 17px;
-  font-weight: 900;
 }
 
 

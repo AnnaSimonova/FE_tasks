@@ -1,11 +1,11 @@
 "use strict";
 
 document.body.onload = function() {
-    toggleMenuItems();
+    toggleHeaderMenuItems();
 };
 
-function toggleMenuItems() {
-    let menuItems = document.querySelectorAll(".menu_item");
+function toggleHeaderMenuItems() {
+    let menuItems = document.querySelectorAll("header ul li a");
     menuItems.forEach(function(item) {
         item.addEventListener('click', function () {
             item.classList.add("active-elem");
@@ -19,24 +19,20 @@ function toggleMenuItems() {
 }
 
 function toggleSideMenu(targetBlockName, secondBlockName) {
+    // toggle target menu block
     let targetBlock = document.getElementById(targetBlockName);
     let burgerMenu = targetBlock.querySelector(".burger_menu");
-    let closeBtn = targetBlock.querySelector(".close_btn");
     let menuList = targetBlock.querySelector(".menu_list");
 
-    burgerMenu.classList.toggle("hidden");
-    closeBtn.classList.toggle("hidden");
+    burgerMenu.classList.contains('active-elem') ? burgerMenu.classList.remove('active-elem') : burgerMenu.classList.add('active-elem');
     menuList.classList.toggle("hidden");
 
+    // toggle second menu block
     let secondBlock = document.getElementById(secondBlockName);
     let secBurgerMenu = secondBlock.querySelector(".burger_menu");
-    if (secBurgerMenu.classList.contains("hidden")) {
-        let secCloseBtn = secondBlock.querySelector(".close_btn");
+    if (secBurgerMenu.classList.contains("active-elem")) {
         let secMenuList = secondBlock.querySelector(".menu_list");
-
-        secBurgerMenu.classList.toggle("hidden");
-        secCloseBtn.classList.toggle("hidden");
+        secBurgerMenu.classList.contains('active-elem') ? secBurgerMenu.classList.remove('active-elem') : secBurgerMenu.classList.add('active-elem');
         secMenuList.classList.toggle("hidden");
     }
-
 }

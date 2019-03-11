@@ -9,6 +9,11 @@
 }
 
 @font-face {
+  font-family: Proxima Nova Bold;
+  src: url('../fonts/Proxima Nova/ProximaNova-Bold.otf');
+}
+
+@font-face {
   font-family: Proxima Nova Light;
   src: url('../fonts/Proxima Nova/ProximaNova-Light.otf');
 }
@@ -105,12 +110,19 @@ header > * {
     text-align: left;
     padding-left: 20px;
     width: 55%;
+    letter-spacing: 1px;
 
     @include mobile {
       min-width: 30%;
     }
 
-    &::after {
+    a {
+      padding: 8px 15px;
+      background-color: color(act-elem-light);
+      border-radius: 30px;
+    }
+
+    a::after {
       background-image: url("../images/arrow-down.svg");
       background-size: 10px 20px;
       display: inline-block;
@@ -196,29 +208,20 @@ main {
   display: none;
 }
 
-#menu_babies, #menu_teens {
+#menu_all {
   height: 100%;
-  background-color: color(babies-light);
+  background-color: white;
   display: flex;
-  color: white;
+  color: color(font-dark);
   font-family: "Proxima Nova Light";
-
-  a {
-    color: white;
-  }
 }
-
-#menu_teens {
-  background-color: color(teens-light);
-}
-
 
 .menu_closed {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 50px;
-
+  width: 60px;
+  border-right: solid thin color(line-dark);
 }
 
 .menu_title {
@@ -234,21 +237,28 @@ main {
 }
 
 .menu_list {
-  width: 365px;
-  font-size: 18px;
-  line-height: 2.2;
-  letter-spacing: 1px;
+  width: 520px;
+  font-size: font(header-size);
+  color: color(font-light);
+  line-height: 2.5;
+  border-right: solid thin color(line-dark);
+  font-family: "Proxima Nova SBold";
+  padding-left: 15%;
 
-  ul {
+  nav ul {
     list-style-type: none;
     margin-left: 10%;
     margin-top: 60%;
     position: relative;
+
+    li a {
+      color: color(font-dark);
+    }
   }
 
   ul li::before {
     content: "";
-    background-color: white;
+    background-color: color(act-elem-dark);
     position: absolute;
     top: 10px;
     left: 0;
@@ -283,7 +293,7 @@ main {
 .burger_menu span {
   display: block;
   height: 2px;
-  background-color: white;
+  background-color: color(font-dark);
   transition: transform 0.3s cubic-bezier(.54,.1,.42,1.48), width 0.3s ease-out;
 
   &:not(:last-child) {
@@ -297,6 +307,121 @@ main {
 
   &:nth-child(odd) {
     width: 20px;
+  }
+}
+
+.home {
+  width: 100%;
+}
+
+.main_banner {
+  width: 100%;
+  height: 450px;
+  background-image: url("../images/bears_3.png");
+  background-repeat:  no-repeat;
+  background-size: 100% 100%;
+  padding-top: 120px;
+  padding-left: 70px;
+  line-height: normal;
+  color: white;
+
+  img {
+    display: inline-block;
+  }
+}
+
+.section_name {
+  color: color(act-elem-light);
+}
+
+.article_title {
+  font-family: "Proxima Nova Bold";
+  font-size: 40px;
+  letter-spacing: 2px;
+  width: 50%;
+}
+
+.date {
+  display: inline-block;
+
+  &::before {
+    content: url("../images/calendar.svg");
+  }
+}
+
+.views {
+  display: inline-block;
+
+  &::before {
+    content: url("../images/eye.svg");
+  }
+}
+
+.read_link {
+  display: inline-block;
+}
+
+.sort_field {
+  color: color(font-light);
+  margin: 3%;
+
+  span {
+    cursor: pointer;
+  }
+
+  .sort_active {
+    font-family: "Proxima Nova SBold";
+  }
+}
+
+.story img {
+  margin: 1% 5%;
+  width: 45%;
+  border-bottom: solid red;
+  float: left;
+}
+
+.story_descr {
+  width: 35%;
+  float: left;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1%;
+  margin-left: -10%;
+  position: relative;
+  z-index: 1;
+
+  & > * {
+    margin: 0;
+  }
+
+  .section_name {
+    padding-bottom: 2%;
+    position: relative;
+    left: 90%;
+  }
+
+  div {
+    text-align: start;
+    background-color: white;
+    padding: 5% 8%;
+    height: 220px;
+    border: solid thin color(line-dark);
+  }
+
+  .article_title {
+    position: absolute;
+    font-size: 30px;
+    z-index: 2;
+    width: 110%;
+    top: 25%;
+    padding: 8%;
+  }
+
+  .read_link {
+    display: block;
+    position: absolute;
+    bottom: 12%;
   }
 }
 

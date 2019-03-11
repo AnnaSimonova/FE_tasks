@@ -8,8 +8,8 @@
 </head>
 <body>
 <header>
-    <a href="#">BOKM&Aring;L</a>
-    <a href="#">Для усіх&ensp;</a>
+    <div><a href="#">BOKM&Aring;L</a></div>
+    <div><a class="for_all_dropdown" href="#">Для усіх&emsp;</a></div>
     <ul>
         <li><a href="#">Про Букмоль</a></li>
         <li><a href="#">Співпраця</a></li>
@@ -21,54 +21,56 @@
     </div>
 </header>
 <main>
-    <div id="menu_babies">
+    <div id="menu_all">
         <div class="menu_closed">
-            <div class="burger_menu" onclick="toggleSideMenu('menu_babies', 'menu_teens')">
+            <div class="burger_menu" onclick="toggleSideMenu('menu_all')">
                 <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-            <div class="menu_title"><p>ДЛЯ МАЛЮКІВ</p></div>
         </div>
         <div class="menu_list hidden">
             <nav>
                 <ul>
-                    <li><a href="#">Головна</a></li>
+                    <li><a href="#">ГОЛОВНА</a></li>
                     <li><a href="#">ТОП</a></li>
-                    <li><a href="#">Огляди</a></li>
-                    <li><a href="#">Корисні статті</a></li>
-                    <li><a href="#">Новини</a></li>
-                    <li><a href="#">Авторська колонка</a></li>
-                    <li><a href="#">Інтерактив</a></li>
-                    <li><a href="#">Літклуб</a></li>
+                    <li><a href="#">ОГЛЯДИ</a></li>
+                    <li><a href="#">КОРИСНІ СТАТТІ</a></li>
+                    <li><a href="#">НОВИНИ</a></li>
+                    <li><a href="#">АВТОРСЬКА КОЛОНКА</a></li>
+                    <li><a href="#">ІНТЕРАКТИВ</a></li>
+                    <li><a href="#">ЛІТКЛУБ</a></li>
                 </ul>
             </nav>
         </div>
     </div>
-    <div id="menu_teens">
-        <div class="menu_closed">
-            <div class="burger_menu" onclick="toggleSideMenu('menu_teens', 'menu_babies')">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
+    <div class="home">
+        <section class="main_banner">
+            <p class="section_name">КОРИСНІ СТАТТІ</p>
+            <p class="article_title">Тварини Патріка Джорджа: врятуй їх усіх</p>
+            <p class="date">1 жовтня, 2017</p>
+            <p class="views">980</p>
+            <div>
+            <p class="read_link">Читати</p>
+            <img class="fav_sign" src="./images/Shape.svg"></div>
+        </section>
+        <div class="sort_field">
+            Сортувати за:&emsp;<span>Популяпністю</span>&emsp;|&emsp;<span>Новизною</span>
+        </div>
+        <section class="story" >
+            <img src="./images/story.png">
+            <div class="story_descr">
+                <p class="section_name">ОГЛЯДИ</p>
+                <div>
+                    <p class="date">Сьогодні</p>
+                    <p class="views">32</p>
+
+                    <p class="read_link">Читати</p>
+                </div>
+                <p class="article_title">Шість пригодницьких історій для літнього читання</p>
             </div>
-            <div class="menu_title"><p>ДЛЯ ТІНЕЙДЖЕРІВ</p></div>
-        </div>
-        <div class="menu_list hidden">
-            <nav>
-                <ul>
-                    <li><a href="#">Головна</a></li>
-                    <li><a href="#">ТОП</a></li>
-                    <li><a href="#">Огляди</a></li>
-                    <li><a href="#">Корисні статті</a></li>
-                    <li><a href="#">Новини</a></li>
-                    <li><a href="#">Авторська колонка</a></li>
-                    <li><a href="#">Інтерактив</a></li>
-                </ul>
-            </nav>
-        </div>
+        </section>
     </div>
 </main>
 <script src="js/action.js"></script>

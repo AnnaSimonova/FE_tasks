@@ -2,6 +2,7 @@
 
 document.body.onload = function() {
     toggleHeaderMenuItems();
+    chooseSortType();
 };
 
 function toggleHeaderMenuItems() {
@@ -18,7 +19,7 @@ function toggleHeaderMenuItems() {
     });
 }
 
-function toggleSideMenu(targetBlockName, secondBlockName) {
+function toggleSideMenu(targetBlockName) {
     // toggle target menu block
     let targetBlock = document.getElementById(targetBlockName);
     let burgerMenu = targetBlock.querySelector(".burger_menu");
@@ -26,13 +27,18 @@ function toggleSideMenu(targetBlockName, secondBlockName) {
 
     burgerMenu.classList.contains('active-elem') ? burgerMenu.classList.remove('active-elem') : burgerMenu.classList.add('active-elem');
     menuList.classList.toggle("hidden");
+}
 
-    // toggle second menu block
-    let secondBlock = document.getElementById(secondBlockName);
-    let secBurgerMenu = secondBlock.querySelector(".burger_menu");
-    if (secBurgerMenu.classList.contains("active-elem")) {
-        let secMenuList = secondBlock.querySelector(".menu_list");
-        secBurgerMenu.classList.contains('active-elem') ? secBurgerMenu.classList.remove('active-elem') : secBurgerMenu.classList.add('active-elem');
-        secMenuList.classList.toggle("hidden");
-    }
+function chooseSortType() {
+    let sortTypes = document.querySelectorAll(".sort_field span");
+    sortTypes.forEach(function(item) {
+        item.addEventListener('click', function () {
+            item.classList.add("sort_active");
+            sortTypes.forEach(function(value) {
+                if (value !== item) {
+                    value.classList.remove("sort_active");
+                }
+            });
+        });
+    });
 }

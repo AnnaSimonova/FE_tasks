@@ -1,0 +1,20 @@
+.burger_menu {
+  background-color: red;
+  border-right: solid thin red;
+
+  span {
+    background-color: white;
+  }
+}
+
+header div {
+  a:last-child {
+    background-color: red;
+    padding-right: 3px;
+    color: white;
+
+    &::after {
+      
+    }
+  }
+}

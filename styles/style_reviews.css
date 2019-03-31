@@ -1,0 +1,32 @@
+/* Reviews page*/
+#home {
+  padding-top: 2%;
+  padding-left: 5%;
+}
+#home > *, #home .primary_article, #home .other_articles {
+  margin-left: 0;
+}
+
+.reviews-page-title {
+  display: block;
+}
+
+.filter_field, .sort_field {
+  display: inline-block;
+}
+
+.sort_field {
+  margin-bottom: 0;
+}
+
+.filter_field span {
+  border: solid thin #EBECF0;
+  border-radius: 20px;
+  padding: 5px 15px;
+  cursor: pointer;
+}
+.filter_field span:hover {
+  color: #EEB20B;
+}
+
+/*# sourceMappingURL=style_reviews.css.map */
